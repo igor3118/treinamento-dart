@@ -68,12 +68,6 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void _diminuir() {
-    setState(() {
-      _counter--;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,21 +86,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 '$_counter',
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
-              TextButton(
-                style: Theme.of(context).textButtonTheme.style,
-                onPressed: _diminuir,
-                child: <Widget>,
-                ),
-              
             ],
           ),
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: _incrementCounter,
-          tooltip: 'Increment',
-          child: const Icon(Icons.add),
-        )
-        // This trailing comma makes auto-formatting nicer for build methods.
-        );
+        floatingActionButton: FloatingActionButton.extended(
+            onPressed: _incrementCounter,
+            tooltip: 'Increment',
+            label: const Text('Add'),
+            icon: const Icon(Icons.add)
+            // This trailing comma makes auto-formatting nicer for build methods.
+            ));
   }
 }
